@@ -1,0 +1,64 @@
+Question
+------------------------
+While working on a data analysis project, Blair used the K-Means algorithm. This was her first time working with a clustering algorithm.
+
+K-Means was straightforward and fast. Blair had all the code written in a few hours, but something was missing.
+
+The documentation mentioned the "elbow method," but Blair wasn't sure how it would help her.
+
+Which of the following statements is true about the elbow method?
+
+The elbow method determines the optimal number of clusters.
+The elbow method detects outliers present in a dataset.
+The elbow method pinpoints the biases within a dataset.
+The elbow method determines which features best explain observed patterns in a dataset.
+
+
+Solution
+-----------------------------------
+
+K-Means Algorithm:
+K-Means is a popular unsupervised machine learning algorithm used for clustering. The goal of K-Means is to partition the data into K clusters, where each data point belongs to the cluster with the nearest mean. The algorithm works iteratively to minimize the sum of squared distances between the data points and their corresponding cluster centroids.
+
+Steps in K-Means:
+
+- Randomly initialize K centroids (cluster centers).
+- Assign each data point to the closest centroid.
+- Recalculate the centroids based on the assigned data points.
+- Repeat steps 2 and 3 until convergence (i.e., the centroids no longer change).
+
+The Elbow Method:
+The elbow method is a technique used to determine the optimal number of clusters (K) in a dataset when using K-Means clustering.
+
+How the Elbow Method Works:
+
+The idea is to plot the sum of squared distances (or inertia) from each point to its assigned cluster centroid against the number of clusters.
+
+As the number of clusters increases, inertia decreases because the points are closer to their centroids. However, at some point, adding more clusters doesn't significantly improve the inertia. The "elbow" point on the graph, where the rate of decrease in inertia slows down, indicates the optimal number of clusters.
+
+Let's Analyze the Statements:
+
+1) The elbow method determines the optimal number of clusters.
+   - Analysis:
+     - This statement is correct. The primary use of the elbow method is to find the optimal number of clusters for K-Means by identifying the "elbow" point in the plot of inertia vs. number of clusters. This helps to balance the trade-off between having too few clusters (high inertia) and too many clusters (low inertia).
+   - Conclusion: This statement is true.
+
+2) The elbow method detects outliers present in a dataset.
+   - Analysis:
+     - This statement is incorrect. The elbow method does not specifically identify outliers. It is used to determine the optimal number of clusters, not to detect outliers. Outlier detection methods, such as DBSCAN or statistical techniques, are more suitable for identifying outliers.
+   - Conclusion: This statement is false.
+
+3) The elbow method pinpoints the biases within a dataset.
+   - Analysis:
+     - This statement is incorrect. The elbow method doesn't detect biases within the dataset. It is solely used to determine the optimal number of clusters. Bias detection requires different techniques, such as examining data distributions, model residuals, or domain expertise.
+   - Conclusion: This statement is false.
+
+4) The elbow method determines which features best explain observed patterns in a dataset.
+   - Analysis:
+     - This statement is incorrect. The elbow method is concerned with finding the number of clusters, not selecting features. Feature selection techniques, such as mutual information or principal component analysis (PCA), are used to determine which features best explain the patterns in the dataset.
+   - Conclusion: This statement is false.
+
+Conclusion:
+The correct statement about the elbow method is:
+
+1) The elbow method determines the optimal number of clusters.
