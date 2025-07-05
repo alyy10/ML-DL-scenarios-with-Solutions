@@ -1,0 +1,66 @@
+
+Question
+-----------------------------------------------
+Building a Perceptron
+Sara is a professor of computer science, and she is preparing an Introduction to Machine Learning class.
+
+She will introduce the concept of Perceptrons to her students, and she wants to emphasize the importance of choosing the correct number of weights when building a Perceptron.
+
+Which of the following options is the correct way to choose the number of weights when building a Perceptron?
+
+- The number of weights should be randomly chosen.
+- The number of weights should equal the number of samples in the dataset.
+- The number of weights should equal the number of features in the dataset.
+- The number of weights should equal the number of biases in the model.
+
+Solution
+---------------------------------------------
+What is a Perceptron?
+A Perceptron is a simple machine learning algorithm used for binary classification tasks. It is the building block of neural networks and is a type of linear classifier.
+
+Structure of a Perceptron:
+
+- Input: The Perceptron takes a set of input features.
+- Weights: Each input feature is associated with a weight, which determines the importance of the corresponding feature.
+- Bias: A bias term is added to shift the decision boundary, allowing the model to better fit the data.
+- Activation Function: The Perceptron uses an activation function, typically a step function, to decide whether to classify an input as one class or the other.
+
+Mathematical Representation:
+
+y = f(w1 * x1 + w2 * x2 + ... + wn * xn + b)
+
+Where:
+- x1, x2, ..., xn are the input features.
+- w1, w2, ..., wn are the corresponding weights.
+- b is the bias.
+- f is the activation function.
+
+The purpose of training a Perceptron is to find the appropriate weights and bias that minimize classification errors.
+
+Now, let's analyze the options:
+
+1) The number of weights should be randomly chosen.
+Analysis:
+- While the initial weights of a Perceptron are typically randomly initialized at the beginning of the training process, this does not mean that the number of weights should be randomly chosen. The number of weights corresponds directly to the number of input features, and it is important to have the same number of weights as the number of features in the dataset.
+- The random initialization only applies to the values of the weights, not the number of weights themselves.
+Conclusion: This statement is false because the number of weights is determined by the number of features, not randomly.
+
+2) The number of weights should equal the number of samples in the dataset.
+Analysis:
+- This is incorrect. The number of weights is determined by the number of features in the dataset, not by the number of samples. Each input feature has a corresponding weight. The number of samples affects the training process (how many data points you use to update the weights), but it does not determine the number of weights.
+Conclusion: This statement is false because the number of weights depends on the number of features, not the number of samples.
+
+3) The number of weights should equal the number of features in the dataset.
+Analysis:
+- This is correct. In a Perceptron, each input feature is assigned a weight, so the number of weights must match the number of input features. For example, if you have 3 features (like height, weight, and age), you need 3 corresponding weights for those features. Additionally, a bias term is typically added, which is independent of the number of features.
+Conclusion: This statement is true because the number of weights should match the number of input features.
+
+4) The number of weights should equal the number of biases in the model.
+Analysis:
+- This is incorrect. A Perceptron typically has one bias term, which is independent of the number of weights. The number of weights is determined by the number of features, but the number of biases is usually one (though in some models, there could be more). The bias helps shift the decision boundary, but it does not determine the number of weights.
+Conclusion: This statement is false because the number of weights and biases are independent of each other.
+
+Final Answer:
+The correct statement about the number of weights in a Perceptron is:
+
+3) The number of weights should equal the number of features in the dataset.
