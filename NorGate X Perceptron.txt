@@ -1,0 +1,85 @@
+Question
+-----------------------------------------------------------------------
+NOR logic gate
+We want to use a Perceptron to represent the NOR logic gate. As a reminder, here is how the NOR gate works:
+
+0 nor 0 = 1
+0 nor 1 = 0
+1 nor 0 = 0
+1 nor 1 = 0
+Our Perceptron will have two inputs, two weights, and a bias parameter.
+
+Which of the following parameters will make our Perceptron act as a NOR gate?
+
+1) w1 = -1.0, w2 = -1.0, b = 1.0
+2) w1 = 0.5, w2 = 0.5, b = -0.1
+3) w1 = -2.0, w2 = -1.0, b = 0.8
+4) You need more than one Perceptron to represent the NOR gate.
+
+
+    Solution 
+------------------------------------------------------------------------
+NOR Gate Truth Table:
+A NOR gate outputs 1 only when both inputs are 0. In all other cases (i.e., when at least one input is 1), it outputs 0.
+Here's the truth table for NOR:
+
+| Input A | Input B | Output (NOR) |
+|---------|---------|--------------|
+|   0     |   0     |      1       |
+|   0     |   1     |      0       |
+|   1     |   0     |      0       |
+|   1     |   1     |      0       |
+
+Perceptron:
+A Perceptron is a simple artificial neuron that produces an output based on a weighted sum of inputs and a bias.
+The general form is:
+
+y = f(w1 * x1 + w2 * x2 + b)
+
+where:
+- x1 and x2 are the inputs,
+- w1 and w2 are the weights,
+- b is the bias,
+- f is an activation function.
+
+For a Perceptron to model the NOR gate, we need the following conditions:
+- When both inputs x1 and x2 are 0, the output should be 1.
+- For all other input combinations, the output should be 0.
+
+Analyzing the Options:
+
+1) w1 = -1.0, w2 = -1.0, b = 1.0:
+- For input (0, 0), the sum is: (-1.0 * 0) + (-1.0 * 0) + 1.0 = 1.0
+  The output will be 1, which matches the NOR gate behavior for (0, 0).
+- For input (0, 1), the sum is: (-1.0 * 0) + (-1.0 * 1) + 1.0 = 0.0
+  The output will be 0, which matches the NOR gate behavior for (0, 1).
+- For input (1, 0), the sum is: (-1.0 * 1) + (-1.0 * 0) + 1.0 = 0.0
+  The output will be 0, which matches the NOR gate behavior for (1, 0).
+- For input (1, 1), the sum is: (-1.0 * 1) + (-1.0 * 1) + 1.0 = -1.0
+  The output will be 0, which matches the NOR gate behavior for (1, 1).
+- This set of parameters correctly models the NOR gate.
+
+2) w1 = 0.5, w2 = 0.5, b = -0.1:
+- For input (0, 0), the sum is: (0.5 * 0) + (0.5 * 0) - 0.1 = -0.1
+  The output will be 0, but the NOR gate expects 1 for (0, 0).
+- This set does not work.
+
+3) w1 = -2.0, w2 = -1.0, b = 0.8:
+- For input (0, 0), the sum is: (-2.0 * 0) + (-1.0 * 0) + 0.8 = 0.8
+  The output will be 1, which matches the NOR gate behavior for (0, 0).
+- For input (0, 1), the sum is: (-2.0 * 0) + (-1.0 * 1) + 0.8 = -0.2
+  The output will be 0, which matches the NOR gate behavior for (0, 1).
+- For input (1, 0), the sum is: (-2.0 * 1) + (-1.0 * 0) + 0.8 = -1.2
+  The output will be 0, which matches the NOR gate behavior for (1, 0).
+- For input (1, 1), the sum is: (-2.0 * 1) + (-1.0 * 1) + 0.8 = -2.2
+  The output will be 0, which matches the NOR gate behavior for (1, 1).
+- This set of parameters also correctly models the NOR gate.
+
+4) You need more than one Perceptron to represent the NOR gate:
+- This is not necessary because a single Perceptron can model the NOR gate as shown in option 1.
+
+Conclusion:
+- The correct parameters for the Perceptron to act as a NOR gate are: 
+1) w1 = -1.0, w2 = -1.0, b = 1.0.
+3) w1 = -2.0, w2 = -1.0, b = 0.8
+
