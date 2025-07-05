@@ -1,0 +1,83 @@
+Question
+------------------------
+Maria has been exploring the potential of improving her deep learning model by incorporating Rectified Linear Units (ReLU) as the activation function in some model layers.
+
+Knowing that she may face resistance from her colleagues, Maria decides to list down some of the benefits of using ReLU to persuade her team.
+
+She has a list but would like assistance reviewing it before presenting it to her team.
+
+Which of the following are the advantages of using the ReLU?
+
+1) ReLU is computationally straightforward to implement.
+2) ReLU provides better representational sparsity than the sigmoid and tanh activation functions because it can produce an actual zero output.
+3) ReLU saturates around extreme values, allowing backpropagation to converge faster and helping the network learn.
+4) Neural networks are easier to optimize when their behavior is as linear as possible. ReLU acts mainly as a linear function, improving our ability to optimize neural networks.
+
+
+Solution
+----------------------------
+ReLU is a piecewise linear function that provides the input directly if it is positive and zero if it's otherwise:
+
+f(x) = max(x, 0)
+ReLU will convert negative input values to zero, causing the function to saturate. However, ReLU does not saturate for positive input values because it keeps them as they are. Contrarily, functions like sigmoid and tanh do saturate, around 0 and 1 for sigmoid, and -1 and 1 for tanh, for both positive and negative inputs.
+
+Moreover, the saturation of ReLU does not aid in faster convergence of backpropagation. Saturation is often a challenge in neural networks and leads to problems like "dying ReLU" or the "vanishing gradient problem."
+
+ReLU can turn negative inputs into zero, unlike sigmoid and tanh, which approximate a zero value. Therefore, when using ReLU, it's possible to have layers with one or more nodes containing zero values, a situation referred to as "sparse representation". This property simplifies the model and can conserve computational resources while effectively representing data in a lower-dimensional space.
+
+The implementation of ReLU is remarkably simple, particularly in comparison to sigmoid and tanh, which require expensive computational processes like exponentiation.
+
+Lastly, optimizing neural networks is easier when their behavior is as linear as possible. ReLU behaves primarily as a linear function, and this attribute simplifies the optimization process of neural networks. ReLU is sometimes called a "piecewise linear function" because it behaves linearly for half of its input domain and vice versa.
+
+So option 1 , 2 and 4 are correct 
+
+Some key terms 
+
+
+1. Dying ReLU (Rectified Linear Unit) Problem:
+The Dying ReLU problem refers to a scenario where ReLU activation functions in neural networks stop learning. This happens when a large number of neurons output zero, meaning that their gradients become zero during backpropagation. When this occurs, these neurons effectively "die" and stop contributing to the learning process.
+
+Why does it happen?
+
+ReLU activation function is defined as 
+f(x) = max(0, x), which means it outputs 0 for all negative inputs.
+
+If weights are initialized in such a way that the neuron consistently produces negative values, the gradients will be zero, and the weights will not be updated. This leads to the "dying" of the neuron.
+
+Impact: When a neuron stops learning, it doesn’t affect the rest of the model's performance. However, a large number of dead neurons can limit the model's expressiveness and learning capacity.
+
+Solutions:
+
+- Leaky ReLU: A variation of ReLU where negative inputs produce a small, non-zero gradient.
+- Parametric ReLU (PReLU): The negative slope is learned during training.
+
+2. Vanishing Gradient Problem:
+The Vanishing Gradient Problem occurs when the gradients used to update the weights during training become extremely small, almost to the point of zero, as they propagate backward through the network.
+
+Why does it happen?
+
+In deep neural networks, when using activation functions like sigmoid or tanh, the gradients can become very small due to their steep slopes at the extreme values (near 0 or 1 for sigmoid, and near -1 or 1 for tanh).
+
+This results in very small updates to the weights in the earlier layers, effectively "stalling" the learning process.
+
+Impact: The model fails to learn efficiently, especially in deeper networks, since weights in early layers receive minimal updates.
+
+Solutions:
+
+- Use of ReLU or Leaky ReLU activations, which help mitigate the vanishing gradient problem.
+- Batch normalization can also help stabilize the learning process by normalizing inputs to each layer.
+
+3. Sparse Representation:
+Sparse Representation refers to the idea that data (or the activation of a neural network) can be represented in a way where most of the elements are zero or near zero. This is beneficial because it makes the representation more compact and computationally efficient.
+
+In Neural Networks:
+
+- Sparse representations are useful when only a small number of features or neurons are active at a time.
+- In the context of activation functions like ReLU, many of the neurons output zero, leading to sparse activations. This sparsity helps the network by focusing on the most important features.
+
+Why is it useful?
+
+- Efficiency: Sparse data is computationally cheaper to process.
+- Interpretability: Sparse representations are often more interpretable because they highlight the most relevant features or activations.
+
+Example: In a language model, if a word embedding vector is sparse, it means only a few dimensions of the vector represent important features of the word, leading to a more efficient and compact representation.
