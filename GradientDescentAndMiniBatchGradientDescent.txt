@@ -1,0 +1,56 @@
+Question
+-------------------------------------------
+Phoenix is working on a Machine Learning model to optimize the energy consumption of a smart home system. She wants to implement the Gradient Descent optimization algorithm to train her model.
+
+To balance the trade-off between computation speed and update accuracy, Phoenix is considering using Mini-Batch Gradient Descent. She wants to understand its benefits and characteristics.
+
+Which of the following statements is true about Mini-Batch Gradient Descent?
+
+1) Mini-Batch Gradient Descent requires loading the entire dataset into memory for each update iteration.
+2) Mini-Batch Gradient Descent updates the model weights only after processing all the available training data.
+3) Mini-Batch Gradient Descent uses a batch of data (more than one sample but fewer than the entire dataset) during every iteration.
+4) Mini-Batch Gradient Descent is not a variant of Gradient Descent.
+
+
+Solution
+--------------------------------------
+
+The problem is about understanding Mini-Batch Gradient Descent, which is a variant of Gradient Descent used in machine learning to optimize model weights.
+
+Gradient Descent:
+Gradient Descent is an optimization algorithm used to minimize the loss function by iteratively moving in the direction of the negative gradient of the function. This helps in adjusting the model parameters (weights) in machine learning models.
+
+Types of Gradient Descent:
+1. Batch Gradient Descent: 
+   - Description: The model is updated using the entire dataset at once. This method ensures accurate updates but can be computationally expensive and slow for large datasets since it requires processing the entire dataset.
+   - Pros: High accuracy in updates.
+   - Cons: Slow, especially with large datasets, as it requires loading all the data into memory.
+
+2. Stochastic Gradient Descent (SGD):
+   - Description: The model is updated after processing each individual training sample. This approach is faster but might introduce a lot of noise in the updates.
+   - Pros: Faster, can handle large datasets.
+   - Cons: Noisy updates that may result in a less accurate final model.
+
+3. Mini-Batch Gradient Descent:
+   - Description: A compromise between batch gradient descent and stochastic gradient descent. The model is updated after processing a small batch of data points (typically 32-256 samples) instead of the entire dataset or a single sample.
+   - Pros: Balances computational speed and accuracy of updates. It is faster than batch gradient descent and more stable than stochastic gradient descent.
+   - Cons: Requires careful tuning of the batch size for optimal performance.
+
+   Analysis of the Options:
+
+1) Mini-Batch Gradient Descent requires loading the entire dataset into memory for each update iteration.
+   - Incorrect: Mini-Batch Gradient Descent only requires a subset (mini-batch) of the data in memory at a time, not the entire dataset.
+
+2) Mini-Batch Gradient Descent updates the model weights only after processing all the available training data.
+   - Incorrect: Mini-Batch Gradient Descent updates the model weights after processing a mini-batch, not the entire dataset.
+
+3) Mini-Batch Gradient Descent uses a batch of data (more than one sample but fewer than the entire dataset) during every iteration.
+   - Correct: Mini-Batch Gradient Descent works by updating the model weights after processing a mini-batch, which is a small subset of the entire training dataset.
+
+4) Mini-Batch Gradient Descent is not a variant of Gradient Descent.
+   - Incorrect: Mini-Batch Gradient Descent is a variant of Gradient Descent and is commonly used for faster training with better performance.
+
+   Conclusion:
+The correct statement about Mini-Batch Gradient Descent is:
+- 3) Mini-Batch Gradient Descent uses a batch of data (more than one sample but fewer than the entire dataset) during every iteration.**
+
