@@ -1,0 +1,61 @@
+
+Question
+-----------------------------------------------
+Social campaign
+Milani works at a marketing agency that specializes in social media campaigns.
+
+The agency has collected vast text data from various social media platforms but lacks labels. To optimize future campaigns, Milani wants to classify the sentiment of each text sample. However, she knows she cannot proceed with supervised learning without labeled data.
+
+Milani must decide on a technique for obtaining labels for the data.
+
+Which of the following techniques could Milani use to label the data?
+
+1) Hire a team to review and label each text sample manually.
+2) Use user reactions or comments on the text samples to automatically generate labels.
+3) Apply a supervised learning method to deduce the labels directly from the existing data.
+4) Implement semi-supervised learning to spread labels across the entire dataset.
+
+
+Solution
+---------------------------------------------
+
+Key Technical Terms:
+Supervised Learning:
+
+This is a machine learning paradigm where a model is trained on a labeled dataset. The dataset consists of input-output pairs, where the "input" is the data (text, images, etc.), and the "output" is the label (in this case, sentiment). The model learns to predict the output from the input.
+
+Supervised learning requires labeled data to function effectively.
+
+Unsupervised Learning:
+
+Unsupervised learning involves training models on unlabeled data. The model tries to find patterns or groupings (e.g., clustering) in the data without predefined labels.
+
+Semi-Supervised Learning:
+
+Semi-supervised learning is a technique that falls between supervised and unsupervised learning. It involves a small amount of labeled data combined with a large amount of unlabeled data. The model is first trained on the labeled data, and then it uses the structure of the unlabeled data to propagate or infer labels across the dataset.
+
+Now, let's analyze the options provided:
+
+1) Hire a team to review and label each text sample manually.
+Analysis:
+- This is a valid technique for labeling data. Manual labeling by human annotators is a common approach to generate labeled datasets when the data is not pre-labeled. It can be time-consuming and costly, but it provides high-quality labels since human annotators can understand nuances in language and context.
+- The downside is the significant cost and time investment for large datasets, but it is a direct way of creating the labeled data required for supervised learning.
+Conclusion: This option is correct. It's a reliable, although resource-intensive, way of obtaining labels.
+
+2) Use user reactions or comments on the text samples to automatically generate labels.
+Analysis:
+- This technique involves using user reactions or comments (e.g., likes, shares, emojis, or comments) as a proxy for labeling sentiment. This is possible in some contexts, especially in social media platforms where engagement metrics often correlate with sentiment.
+- However, user reactions may not always perfectly match sentiment, as reactions could be based on various factors (e.g., curiosity, humor, or irony). Additionally, this method assumes that the reactions are a reliable indicator of sentiment, which may not always hold true.
+Conclusion: This option is partially correct but not always reliable. User reactions can give an approximate sentiment label but are not guaranteed to be accurate. Hence, this option can be used, but with caution.
+
+3) Apply a supervised learning method to deduce the labels directly from the existing data.
+Analysis:
+- This statement is incorrect because supervised learning requires labeled data. In this case, Milani has an unlabeled dataset, so applying supervised learning directly is not possible without first labeling the data.
+- Without labels, supervised learning cannot be applied to deduce labels directly.
+Conclusion: This statement is false because supervised learning cannot be used without labeled data.
+
+4) Implement semi-supervised learning to spread labels across the entire dataset.
+Analysis:
+- Semi-supervised learning is a good option when you have a small amount of labeled data and a large amount of unlabeled data. It can propagate labels from the small labeled subset to the larger unlabeled dataset by leveraging the patterns or structures found in the data.
+- For example, a model could be trained on a small set of labeled samples (e.g., manually labeled or generated via some other technique), and then it would propagate the labels across the remaining unlabeled data. This can significantly reduce the amount of manual labeling required.
+Conclusion: This option is correct because semi-supervised learning is specifically designed for situations where you have a mix of labeled and unlabeled data. It's a very efficient way to label a large dataset when manually labeling all the data is not feasible.
